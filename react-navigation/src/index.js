@@ -3,24 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Route, BrowserRouter as Router, Link } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Link, NavLink,Switch } from 'react-router-dom';
 import About from './About';
 import Home from './Home';
 import Contact from './Contact';
+import NotFound from './NotFound';
+import Contacts from './Contacts';
 
 
 const routing = (
   <Router>
     <div>
-      <Link to="/" >Home</Link>
-      <Link to="/about">About </Link>
-      <Link to="/contact">Contact</Link>
+      <NavLink to="/" exact activeStyle={{ color: 'red' }}>Home</NavLink>
+      <NavLink to="/about" exact activeStyle={{ color: 'green' }} >About </NavLink>
+      <NavLink to="/contact" exact activeStyle={{ color: 'brown' }}>Contact</NavLink>
     </div>
 
-    <Route exact path="/" component={Home} />
-    <Route exact path="/about" component={About} />
-    <Route exact path="/contact" component={Contact} />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/contact" component={Contact} />
+      <Route exact path="/contact/:name" component={Contacts} />
+      <Route component={NotFound} />
+    </Switch >
   </Router>
+
 );
 
 ReactDOM.render(
