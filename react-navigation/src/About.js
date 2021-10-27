@@ -1,12 +1,15 @@
 import React from 'react';
+import { Navbar,Container, Nav } from 'react-bootstrap';
 
 class About extends React.Component {
     render() {
 
         return (
-            <div>
-                <h1>About-US</h1>
-            </div>
+            <>
+                <Container>
+                    About US
+                    </Container>
+                </>
         );
     }
 }
