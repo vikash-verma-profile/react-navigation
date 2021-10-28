@@ -3,7 +3,7 @@ import Movie from './Movie';
 import { Table } from 'react-bootstrap';
 
 function MovieList(props) {
-    console.log(props);
+    //console.log(props);
     return (
         <div>
             <Table striped bordered hover>
